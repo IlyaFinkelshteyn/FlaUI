@@ -10,7 +10,6 @@ namespace FlaUI.Core.UITests.Elements
     [TestFixture(AutomationType.UIA2, TestApplicationType.Wpf)]
     [TestFixture(AutomationType.UIA3, TestApplicationType.WinForms)]
     [TestFixture(AutomationType.UIA3, TestApplicationType.Wpf)]
-    [Ignore("Ignore for testing reasons")]
     public class ListViewTests : UITestBase
     {
         private ListView _listView;
@@ -31,6 +30,7 @@ namespace FlaUI.Core.UITests.Elements
         }
 
         [Test]
+        [Ignore("Ignore for testing reasons")]
         public void GridPatternTest()
         {
             var listView = _listView;
@@ -39,6 +39,7 @@ namespace FlaUI.Core.UITests.Elements
         }
 
         [Test]
+        [Ignore("Ignore for testing reasons")]
         public void HeaderAndColumnsTest()
         {
             var listView = _listView;
@@ -51,6 +52,7 @@ namespace FlaUI.Core.UITests.Elements
         }
 
         [Test]
+        [Ignore("Ignore for testing reasons")]
         public void RowsAndCellsTest()
         {
             var listView = _listView;

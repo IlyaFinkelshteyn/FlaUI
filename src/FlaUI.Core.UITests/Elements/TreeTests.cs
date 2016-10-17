@@ -10,7 +10,6 @@ namespace FlaUI.Core.UITests.Elements
     [TestFixture(AutomationType.UIA2, TestApplicationType.Wpf)]
     [TestFixture(AutomationType.UIA3, TestApplicationType.WinForms)]
     [TestFixture(AutomationType.UIA3, TestApplicationType.Wpf)]
-    [Ignore("Ignore for testing reasons")]
     public class TreeTests : UITestBase
     {
         private Tree _tree;
@@ -31,6 +30,7 @@ namespace FlaUI.Core.UITests.Elements
         }
 
         [Test]
+        [Ignore("Ignore for testing reasons")]
         public void SelectionTest()
         {
             var tree = _tree;
