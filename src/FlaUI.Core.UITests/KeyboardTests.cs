@@ -8,7 +8,6 @@ using NUnit.Framework;
 namespace FlaUI.Core.UITests
 {
     [TestFixture]
-    [Ignore("Ignore for testing reasons")]
     public class KeyboardTests
     {
         [Test]

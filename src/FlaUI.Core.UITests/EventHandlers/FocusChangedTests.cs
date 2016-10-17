@@ -10,7 +10,6 @@ using NUnit.Framework;
 namespace FlaUI.Core.UITests.EventHandlers
 {
     [TestFixture]
-    [Ignore("Ignore for testing reasons")]
     public class FocusChangedTests
     {
         [Test]
