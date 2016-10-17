@@ -1,4 +1,5 @@
-﻿using FlaUI.Core.AutomationElements;
+﻿using System;
+using FlaUI.Core.AutomationElements;
 using FlaUI.Core.AutomationElements.Infrastructure;
 using FlaUI.Core.Definitions;
 using FlaUI.Core.UITests.TestFramework;
@@ -24,9 +25,13 @@ namespace FlaUI.Core.UITests.Elements
         {
             var mainWindow = App.GetMainWindow(Automation);
             var tab = mainWindow.FindFirst(TreeScope.Descendants, mainWindow.ConditionFactory.ByControlType(ControlType.Tab)).AsTab();
+            Console.WriteLine("Select Tab");
             tab.SelectTabItem(1);
+            Console.WriteLine("Tab Selected");
             var tree = mainWindow.FindFirst(TreeScope.Descendants, mainWindow.ConditionFactory.ByAutomationId("treeView1")).AsTree();
+            Console.WriteLine("Tree Found");
             _tree = tree;
+            Console.WriteLine("Tree assigned");
         }
 
         [Test]
