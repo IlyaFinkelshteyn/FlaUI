@@ -1,0 +1,34 @@
+version: '{build}'
+
+assembly_info:
+  patch: true
+  file: '**\AssemblyInfo.*'
+  assembly_version: $(Major).$(Minor)
+  assembly_file_version: $(Major).$(Minor).$(Patch).{build}
+  assembly_informational_version: $(Major).$(Minor).$(Patch)
+
+environment:
+  Major: 0
+  Minor: 3
+  Patch: 3
+
+install:
+- ps: iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+
+nuget:
+  disable_publish_on_pr: true
+
+  before_build:
+- cmd: nuget restore src\FlaUI.sln
+
+build:
+  project: src\FlaUI.sln
+  publish_nuget: true
+  include_nuget_references: true
+  verbosity: minimal
+deploy: off
+
+on_finish:
+- ps: >-
+    if (Test-Path -path c:\FailedTestsScreenshots) { Get-ChildItem c:\FailedTestsScreenshots*.* | % { Push-AppveyorArtifact $_.FullName -FileName $_.Name }}
+    # $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
