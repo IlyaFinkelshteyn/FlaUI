@@ -22,11 +22,11 @@ namespace FlaUI.Core.UITests.Elements
         [OneTimeSetUp]
         public void SelectTab()
         {
-            var mainWindow = App.GetMainWindow(Automation);
-            var tab = mainWindow.FindFirst(TreeScope.Descendants, mainWindow.ConditionFactory.ByControlType(ControlType.Tab)).AsTab();
-            tab.SelectTabItem(1);
-            var listView = mainWindow.FindFirst(TreeScope.Descendants, mainWindow.ConditionFactory.ByAutomationId("listView1")).AsListView();
-            _listView = listView;
+            //var mainWindow = App.GetMainWindow(Automation);
+            //var tab = mainWindow.FindFirst(TreeScope.Descendants, mainWindow.ConditionFactory.ByControlType(ControlType.Tab)).AsTab();
+            //tab.SelectTabItem(1);
+            //var listView = mainWindow.FindFirst(TreeScope.Descendants, mainWindow.ConditionFactory.ByAutomationId("listView1")).AsListView();
+            //_listView = listView;
         }
 
         [Test]
