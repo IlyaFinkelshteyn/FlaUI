@@ -12,9 +12,6 @@ environment:
   Minor: 3
   Patch: 3
 
-install:
-- ps: iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
-
 nuget:
   disable_publish_on_pr: true
 
@@ -26,6 +23,9 @@ build:
   publish_nuget: true
   include_nuget_references: true
   verbosity: minimal
+  
+after_build:
+- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 
 deploy: off
 
