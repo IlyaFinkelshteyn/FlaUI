@@ -10,7 +10,6 @@ namespace FlaUI.Core.UITests.Elements
     [TestFixture(AutomationType.UIA2, TestApplicationType.Wpf)]
     [TestFixture(AutomationType.UIA3, TestApplicationType.WinForms)]
     [TestFixture(AutomationType.UIA3, TestApplicationType.Wpf)]
-    [Ignore("Ignore for testing reasons")]
     public class WindowTests : UITestBase
     {
         public WindowTests(AutomationType automationType, TestApplicationType appType)
