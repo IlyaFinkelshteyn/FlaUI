@@ -23,7 +23,6 @@ namespace FlaUI.Core.Tools
                     Thread.Sleep(retryInterval ?? DefaultRetryInterval);
                 }
             }
-
             action();
         }
 
@@ -49,6 +48,7 @@ namespace FlaUI.Core.Tools
                 {
                     return element;
                 }
+                Thread.Sleep(retryInterval ?? DefaultRetryInterval);
             }
 
             return func();
