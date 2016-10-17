@@ -24,7 +24,7 @@ namespace FlaUI.Core.UITests.Elements
         {
             var mainWindow = App.GetMainWindow(Automation);
             var tab = mainWindow.FindFirst(TreeScope.Descendants, mainWindow.ConditionFactory.ByControlType(ControlType.Tab)).AsTab();
-            //tab.SelectTabItem(1);
+            tab.SelectTabItem(1);
             //var tree = mainWindow.FindFirst(TreeScope.Descendants, mainWindow.ConditionFactory.ByAutomationId("treeView1")).AsTree();
             //_tree = tree;
         }
