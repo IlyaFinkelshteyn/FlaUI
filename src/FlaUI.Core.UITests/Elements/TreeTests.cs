@@ -2,6 +2,7 @@
 using FlaUI.Core.AutomationElements;
 using FlaUI.Core.AutomationElements.Infrastructure;
 using FlaUI.Core.Definitions;
+using FlaUI.Core.Input;
 using FlaUI.Core.UITests.TestFramework;
 using NUnit.Framework;
 
@@ -28,10 +29,11 @@ namespace FlaUI.Core.UITests.Elements
             Console.WriteLine("Select Tab");
             tab.SelectTabItem(1);
             Console.WriteLine("Tab Selected");
+            Helpers.WaitUntilInputIsProcessed();
             var tree = mainWindow.FindFirst(TreeScope.Descendants, mainWindow.ConditionFactory.ByAutomationId("treeView1")).AsTree();
             Console.WriteLine("Tree Found");
-            //_tree = tree;
-            //Console.WriteLine("Tree assigned");
+            _tree = tree;
+            Console.WriteLine("Tree assigned");
         }
 
         [Test]

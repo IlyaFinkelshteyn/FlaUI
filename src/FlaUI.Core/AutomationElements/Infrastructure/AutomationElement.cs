@@ -191,6 +191,8 @@ namespace FlaUI.Core.AutomationElements.Infrastructure
         /// </summary>
         public AutomationElement FindFirst(TreeScope treeScope, ConditionBase condition, TimeSpan timeOut)
         {
+            return BasicAutomationElement.FindFirst(treeScope, condition);
+            
             Predicate<AutomationElement> shouldRetry = element => element == null;
             Func<AutomationElement> func = () => BasicAutomationElement.FindFirst(treeScope, condition);
 
