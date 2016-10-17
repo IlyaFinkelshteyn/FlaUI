@@ -32,7 +32,6 @@ namespace FlaUI.Core.Tools
             var startTime = DateTime.Now;
             while (DateTime.Now.Subtract(startTime).TotalMilliseconds < retryFor.TotalMilliseconds)
             {
-                Console.WriteLine("In While");
                 T element;
                 try
                 {

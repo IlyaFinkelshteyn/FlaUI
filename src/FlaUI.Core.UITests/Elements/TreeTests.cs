@@ -30,8 +30,8 @@ namespace FlaUI.Core.UITests.Elements
             Console.WriteLine("Tab Selected");
             var tree = mainWindow.FindFirst(TreeScope.Descendants, mainWindow.ConditionFactory.ByAutomationId("treeView1")).AsTree();
             Console.WriteLine("Tree Found");
-            _tree = tree;
-            Console.WriteLine("Tree assigned");
+            //_tree = tree;
+            //Console.WriteLine("Tree assigned");
         }
 
         [Test]
