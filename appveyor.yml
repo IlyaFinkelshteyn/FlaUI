@@ -29,6 +29,9 @@ build:
 
 deploy: off
 
+test_script:
+- cmd: test.cmd
+
 on_finish:
 - ps: >-
     if (Test-Path -path c:\FailedTestsScreenshots) { Get-ChildItem c:\FailedTestsScreenshots*.* | % { Push-AppveyorArtifact $_.FullName -FileName $_.Name }}
