@@ -12,6 +12,7 @@ namespace FlaUI.Core.UITests.Elements
     [TestFixture(AutomationType.UIA2, TestApplicationType.Wpf)]
     [TestFixture(AutomationType.UIA3, TestApplicationType.WinForms)]
     [TestFixture(AutomationType.UIA3, TestApplicationType.Wpf)]
+    [Ignore("Ignore for testing reasons")]
     public class SliderTests : UITestBase
     {
         public SliderTests(AutomationType automationType, TestApplicationType appType)
