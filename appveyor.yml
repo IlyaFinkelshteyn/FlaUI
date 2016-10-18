@@ -18,6 +18,9 @@ nuget:
 install:
 - nuget install  NUnit.Console -OutputDirectory %SYSTEMDRIVE%\Tools\NUnit35
 - set path=%SYSTEMDRIVE%\Tools\NUnit35\NUnit.ConsoleRunner.3.5.0\tools\;%path%
+- mkdir %SYSTEMDRIVE%\Tools\NUnit35\NUnit.ConsoleRunner.3.5.0\tools\addins
+- copy %SYSTEMDRIVE%\Tools\NUnit3\bin\addins %SYSTEMDRIVE%\Tools\NUnit35\NUnit.ConsoleRunner.3.5.0\tools\addins
+- copy c:\Tools\NUnit3\bin\appveyor.addins %SYSTEMDRIVE%\Tools\NUnit35\NUnit.ConsoleRunner.3.5.0\tools
 
 before_build:
 - cmd: nuget restore src\FlaUI.sln
@@ -28,8 +31,8 @@ build:
   include_nuget_references: true
   verbosity: minimal
   
-after_build:
-- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+#after_build:
+#- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 
 deploy: off
 
